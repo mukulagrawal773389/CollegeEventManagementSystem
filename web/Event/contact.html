@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> contact </title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet">
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/quaries.css">
+    
+        <script>
+        function valid() {
+            var a = F.n1.value;
+            if (a.length < 1) {
+                alert("Name field cannot blank");
+                return false;
+            }
+            var count = 0;
+            for (i = 0; i < a.length; i++) {
+                var ch = a.charCodeAt(i);
+                if ((ch >= 65 && ch <= 90) || (ch >= 97 && ch <= 122) || (ch == 32))
+                    count++;
+            }
+            if (count != a.length) {
+                alert("Name field can not contain digit or other synbol");
+                return false;
+            }
+            var em = F.e1.value;
+            if (em.length < 1) {
+                alert("Email Field Can not blank");
+                return false;
+            }
+            var pt2 = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (!em.match(pt2)) {
+                alert("Enter Valid Email");
+                return false;
+            }
+            var d = F.ph.value;
+            if (d.length < 1) {
+                alert("Phone Field cannot blank");
+                return false;
+            }
+            if (d.length != 10) {
+                alert("Phone Field Length Must be 10");
+                return false;
+            }
+            var a = F.m1.value;
+            if (a.length < 1) {
+                alert("MEssage  field cannot blank");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+    
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="logo-login"> YOY </h1>
+        <nav class="main-nav">
+            <ul class="main-nav-list">
+                <li><a class="main-nav-link_log" href="index.html"> Home </a></li>
+                <li><a class="main-nav-link_log" href="Event.jsp"> Events </a></li>
+                <li><a class="main-nav-link_log" href="contact.html"> Contact us</a></li>
+                <li><a class="main-nav-link nav-cta" href="login.html"> Login </a></li>
+                <li><a class="main-nav-link nav-cta" href="signup.html"> Register </a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="section-login">
+        <div class="container">
+            <div class="cta">
+                <div class="cta-text-box">
+                    <h2 class="heading-login"> Contact us </h2>
+                    <p class="cta-text">
+                        We'd love to hear from you!
+                    </p>
+
+                    <form class="cta-form" name="F" action="contact.jsp" method="post" onsubmit="return valid()">
+                        <div>
+                            <label for="full-name"> Name</label>
+                            <input class="input" id="full-name" type="text" name="n1" placeholder="John Smith" />
+                        </div>
+
+                        <div>
+                            <label for="email">Email address</label>
+                            <input class="input" id="email" type="email" name="e1" placeholder="me@example.com"  />
+                        </div>
+
+                        <div>
+                            <label for="number"> Phone Number</label>
+                            <input class="input" id="password" type="number" name="ph"  placeholder="+91" />
+                        </div>
+
+
+                        <!-- <label for="password"> Password </label>
+                            <input id="password" type="password" required />
+                        </div> -->
+                        <!-- <button class="btn-login"> Login </button> -->
+                        <div>
+                            <label for="message">Message</label>
+                            <textarea name="m1" cols="20" rows="6"  required placeholder="Write here">
+                            </textarea>
+                        </div>
+                        <!-- <input
+                      id="Message"
+                      type="me"
+                      placeholder="me@example.com"
+                      required
+                    /> -->
+                        <!-- </div> -->
+
+                        <!-- <div>
+                    <label for="select-where">Where did you hear from us?</label>
+                    <select id="select-where" required>
+                        <option value="">Please choose one option:</option>
+                        <option value="friends">Friends and family</option>
+                        <option value="youtube">YouTube video</option>
+                        <option value="podcast">LinkedIn</option>
+                        <option value="ad">Facebook ad</option>
+                        <option value="others">Others</option>
+                    </select>
+                </div> -->
+
+                        <div class="rem">
+                            <!-- <label for="chechbox">
+                                <input class="ckechbox" type="checkbox"> I agree all statements in
+                                <a href="#" style=" text-decoration: none; color: inherit;">
+                                    <u>Term & Condition</u></a>
+                            </label> -->
+                            <!-- <a href="#"
+                                style="display: block; font-size: 1.6rem; font-weight: 500; text-decoration: none; color: inherit;">
+                                Forget Password?
+                            </a> -->
+                        </div>
+                        <button class="btn-login"> Send Message </button>
+                    </form>
+                </div>
+                        <div class="cta-img-box" role="img" aria-label="Woman enjoying food"><img src="css/contact.jpg"
+                        alt="admin on work" height="670" width=550">
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
